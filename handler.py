@@ -7,6 +7,7 @@ from urllib.parse import unquote_plus
 import boto3
 from PIL import Image
 
+# spacify size of images
 thumbnail_size = 320, 180
 
 logger = logging.getLogger()
@@ -40,6 +41,6 @@ def resize(event, context):
 
         s3_client.download_file(bucket, key, download_path)
         resize_image(download_path, resized_path)
-        # upload
+        # upload(specify destination)
         s3_client.upload_file(resized_path, "iwayu987-resize-bucket", resized_key)
         logger.info('サムネイルを生成しました({})'.format(resized_key))
