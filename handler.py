@@ -40,5 +40,6 @@ def resize(event, context):
 
         s3_client.download_file(bucket, key, download_path)
         resize_image(download_path, resized_path)
-        s3_client.upload_file(resized_path, "ksbysample-resize-bucket", resized_key)
+        # upload
+        s3_client.upload_file(resized_path, "iwayu987-resize-bucket", resized_key)
         logger.info('サムネイルを生成しました({})'.format(resized_key))

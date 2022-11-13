@@ -14,12 +14,12 @@ provider:
       Action:
         - "s3:GetObject"
       Resource:
-        - "arn:aws:s3:::ksbysample-upload-bucket/*"
+        - "arn:aws:s3:::iwayu987-upload-bucket/*"
     - Effect: "Allow"
       Action:
         - "s3:PutObject"
       Resource:
-        - "arn:aws:s3:::ksbysample-resize-bucket/*"
+        - "arn:aws:s3:::iwayu987-resize-bucket/*"
 
 functions:
   resize:
